@@ -39,8 +39,8 @@ const snomedTerms = terms.map(t=>({source_text:t[0],normalized_text:t[1],categor
 const icdTerms = terms.map(t=>({source_text:t[0],normalized_text:t[1],category:t[2],icd11_candidates:pick(iMap,t[0])}));
 
 const DEMO = [
- {id:'input', label:'Input Document', resLabel:'Synthetic input document', ep:'POST /api/v1/ocr',
-  note:'Your application submits a scan or PDF (base64 / data URI) with its file type, or plain text, which skips OCR. This stage shows the fictional note used throughout the demonstration.',
+ {id:'input', label:'Input Document', resLabel:'Example input document', ep:'POST /api/v1/ocr',
+  note:'Your application submits a scan or PDF (base64 / data URI) with its file type, or plain text, which skips OCR. This stage shows the example note used throughout the walkthrough.',
   req:req('"file": "data:image/png;base64,<…>",\n  "file_type": "image/png",\n  "language": "en"'), res:NOTE},
  {id:'ocr', label:'Extracted Text', ep:'POST /api/v1/ocr',
   note:'The OCR workflow returns extracted text, which your application can show to staff for review before downstream use.',
@@ -55,7 +55,7 @@ const DEMO = [
   note:'A structured summary organised into sections. Sections without evidence in the source are returned empty.',
   req:req('"text": "<extracted text>"'),
   res:j(env('summary','summary.v1',{
-   patient_info:{name:'Test Patient',age:'38 YEARS',gender:'MALE',mrn:''},
+   patient_info:{name:'Example Patient',age:'38 YEARS',gender:'MALE',mrn:''},
    admission_details:{admission_date:'',discharge_date:'',ward:'',consultant:'',unit:'ENT',bed:''},
    presenting_complaints:['Vertigo - 3 days','Tinnitus, left ear','Mild reduced hearing','No discharge from ear'],
    history_of_present_illness:'Three-day history of vertigo with left-sided tinnitus and mild reduced hearing. No ear discharge.',
@@ -152,7 +152,7 @@ const hl=t=>esc(t).replace(/("(?:[^"\\]|\\.)*")(\s*:)?|\b(true|false|null)\b|(-?
 })();
 
 
-// Sample request in the technical section (placeholder IDs, synthetic text).
+// Sample request in the technical section (placeholder IDs, example text).
 document.getElementById('sample').innerHTML=hl('POST https://YOUR-CLINOVA-HOST/api/v1/normalization\n'+req('"text": "HTN, diabetes mellitus, metformin 500 mg twice daily",\n  "language": "en"'));
 document.getElementById('yr').textContent=new Date().getFullYear();
 // Scroll reveal (lightweight; content stays visible without IntersectionObserver).

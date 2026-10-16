@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clinova by DAS MEDHUB | Clinical AI APIs Built Into Your Workflow</title>
+<title>Clinova by DAS Medhub | Clinical AI APIs Built Into Your Workflow</title>
 <meta name="description" content="Clinova is a REST API service from DAS Medhub that turns supported clinical documents and text into structured, reviewable outputs inside the healthcare software you already use.">
 <meta property="og:title" content="Clinova by DAS Medhub: Clinical intelligence, built into your workflow">
 <meta property="og:description" content="Document intelligence, clinical extraction and FHIR R4 workflows through REST APIs.">
@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -46,7 +46,7 @@
       </ul>
     </div>
     <figure class="hv" aria-label="Illustration: a clinical document goes into the Clinova API and a structured response comes back">
-      <div class="hv-doc"><div class="hv-t"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Clinical document <span>synthetic</span></div>
+      <div class="hv-doc"><div class="hv-t"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Clinical document <span>example</span></div>
         <p>c/o: vertigo - 3 days. Tinnitus left ear.<br>TAB BETAHISTINE 16mg p/o twice daily…</p></div>
       <div class="hv-flow"><span class="hv-dot" aria-hidden="true"></span><code>POST /api/v1/…</code></div>
       <div class="hv-core"><b><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>Clinova Clinical AI API</b>
@@ -56,8 +56,7 @@
   { <span class="k">"type"</span>: <span class="s">"symptom"</span>, <span class="k">"normalized_text"</span>: <span class="s">"vertigo"</span> },
   { <span class="k">"type"</span>: <span class="s">"medication"</span>, <span class="k">"normalized_text"</span>: <span class="s">"betahistine"</span> }
 ]</pre>
-      <figcaption>Illustration only. This page makes no API calls.</figcaption>
-    </figure>
+      </figure>
   </div>
 </section>
 
@@ -117,9 +116,9 @@
 <section class="sec" id="demo">
   <div class="wrap">
     <div class="rv head"><p class="label">Demonstration</p><h2>What a request and response might look like.</h2>
-    <p class="sub">A local simulation with fictional data: no network request is made. Envelopes and <code>result</code> shapes mirror engine output; long arrays are abbreviated. This interface illustrates the API and is not part of what you integrate.</p></div>
+    <p class="sub">See how a request and its structured response look for each workflow. Responses are shortened for readability.</p></div>
     <div class="demo rv">
-      <div class="demo-bar"><span><i class="fa-solid fa-flask" aria-hidden="true"></i> Illustrative API Demonstration</span><span class="badge">Synthetic data · simulated</span></div>
+      <div class="demo-bar"><span><i class="fa-solid fa-flask" aria-hidden="true"></i> Illustrative API Demonstration</span></div>
       <div class="tabs" role="tablist" aria-label="Demonstration stages" id="tabs"></div>
       <div class="panel" role="tabpanel" id="panel" tabindex="0">
         <div class="demo-head"><span class="chip" id="dEp"></span></div>
@@ -256,6 +255,6 @@
   <div class="wrap bottom"><span>© <span id="yr">2026</span> DAS Medhub. Clinova by DAS Medhub.</span>
     <a href="#top" class="totop"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top</a></div>
 </footer>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
