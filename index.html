@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinova by DAS Medhub | Clinical AI APIs Built Into Your Workflow</title>
+<meta name="description" content="Clinova is a REST API service from DAS Medhub that turns supported clinical documents and text into structured, reviewable outputs inside the healthcare software you already use.">
+<meta property="og:title" content="Clinova by DAS Medhub: Clinical intelligence, built into your workflow">
+<meta property="og:description" content="Document intelligence, clinical extraction and FHIR R4 workflows through REST APIs.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b2f22'/><path d='M7 16h5l2-5 4 10 2-5h5' stroke='%23e8710a' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="top">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Clinova by DAS Medhub, home">
+      <img src="https://www.dasmedhub.com/images/dasmedhub-logo.png" alt="DAS Medhub" height="28">
+      <span class="brand-sub">Clinova</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="menu" aria-label="Primary">
+      <a href="#capabilities">Capabilities</a><a href="#how">How It Works</a><a href="#use-cases">Use Cases</a><a href="#integration">Integration</a><a href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Request an API Demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Clinical AI infrastructure · by DAS Medhub</p>
+      <h1>Clinical intelligence,<br>built into your workflow.</h1>
+      <p class="lead">Turn supported clinical documents and text into structured, reviewable clinical outputs through APIs. Integrate document intelligence, clinical information extraction and interoperability workflows into the healthcare software you already use.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="#contact">Request an API Demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a class="btn btn-ghost" href="#how">Explore the API Workflow</a></div>
+      <ul class="proof">
+        <li><i class="fa-solid fa-code" aria-hidden="true"></i>API-first architecture</li>
+        <li><i class="fa-solid fa-code-branch" aria-hidden="true"></i>Existing-system integration</li>
+        <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>Workflow-specific capabilities</li>
+      </ul>
+    </div>
+    <figure class="hv" aria-label="Illustration: a clinical document goes into the Clinova API and a structured response comes back">
+      <div class="hv-doc"><div class="hv-t"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>Clinical document <span>synthetic</span></div>
+        <p>c/o: vertigo - 3 days. Tinnitus left ear.<br>TAB BETAHISTINE 16mg p/o twice daily…</p></div>
+      <div class="hv-flow"><span class="hv-dot" aria-hidden="true"></span><code>POST /api/v1/…</code></div>
+      <div class="hv-core"><b><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>Clinova Clinical AI API</b>
+        <div><span class="on">OCR</span><span class="on">Extraction</span><span class="on">Structured output</span></div></div>
+      <div class="hv-flow"><span class="hv-dot d2" aria-hidden="true"></span><code>200 · JSON</code></div>
+      <pre class="hv-json"><span class="k">"entities"</span>: [
+  { <span class="k">"type"</span>: <span class="s">"symptom"</span>, <span class="k">"normalized_text"</span>: <span class="s">"vertigo"</span> },
+  { <span class="k">"type"</span>: <span class="s">"medication"</span>, <span class="k">"normalized_text"</span>: <span class="s">"betahistine"</span> }
+]</pre>
+      <figcaption>Illustration only. This page makes no API calls.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="problem">
+  <div class="wrap two">
+    <div class="rv"><p class="label">The problem</p><h2>Clinical information is everywhere. Usable clinical data is not.</h2></div>
+    <div class="rv prose">
+      <p>Handwritten notes, scans, PDFs and free text carry the detail of a consultation, yet software can only act on data it can read and structure.</p>
+      <p>Existing applications often lack the means to extract text, structure findings, summarize encounters, normalize terminology or emit interoperable records. Clinova supplies those as separate API workflows. Your application decides what to show, review, store or act on.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="capabilities">
+  <div class="wrap">
+    <div class="rv head"><p class="label">What the API does</p><h2>Six capability groups, each with its own endpoints.</h2>
+    <p class="sub">Workflows are called separately, and outputs are designed for review by qualified staff.</p></div>
+    <div class="caps">
+      <article class="cap rv" id="cap-doc"><i class="fa-solid fa-file-circle-check ic" aria-hidden="true"></i><h3>Document intelligence &amp; OCR</h3>
+        <p>Extracts text from scans and PDFs, including multi-document requests. Persisted OCR can be retrieved and a reviewed version submitted back.</p>
+        <dl><dt>Input</dt><dd>Image, PDF (up to 50 pages), TXT</dd><dt>Processing</dt><dd>OCR</dd><dt>Output</dt><dd>Extracted text</dd></dl><code class="ex">POST /api/v1/ocr</code></article>
+      <article class="cap rv" id="cap-extract"><i class="fa-solid fa-notes-medical ic" aria-hidden="true"></i><h3>Clinical extraction &amp; summarization</h3>
+        <p>Turns text or processed documents into typed entities, summaries and SOAP drafts, and flags documentation gaps. Translation is also available.</p>
+        <dl><dt>Input</dt><dd>Text or document</dd><dt>Processing</dt><dd>Extraction, summary, SOAP, gaps</dd><dt>Output</dt><dd>JSON in <code>result</code></dd></dl><code class="ex">/entities · /summary · /soap · /gaps</code></article>
+      <article class="cap rv" id="cap-coding"><i class="fa-solid fa-stethoscope ic" aria-hidden="true"></i><h3>Terminology &amp; coding</h3>
+        <p>Normalizes clinical terms, then looks up SNOMED CT and ICD-11 candidates. Candidates are suggestions for clinician or coder confirmation.</p>
+        <dl><dt>Input</dt><dd>Text or document</dd><dt>Processing</dt><dd>Normalization, code lookup</dd><dt>Output</dt><dd>Per-term candidate lists</dd></dl><code class="ex">/normalization · /snomed · /icd</code></article>
+      <article class="cap rv" id="cap-fhir"><i class="fa-solid fa-database ic" aria-hidden="true"></i><h3>Structured interoperability</h3>
+        <p>Generates FHIR R4 resources from clinical content and validates them, so your pipeline can receive standards-shaped data.</p>
+        <dl><dt>Input</dt><dd>Text or document</dd><dt>Processing</dt><dd>FHIR R4 generation, validation</dd><dt>Output</dt><dd>Resource wrappers</dd></dl><code class="ex">POST /api/v1/fhir</code></article>
+      <article class="cap rv" id="cap-match"><i class="fa-solid fa-arrows-rotate ic" aria-hidden="true"></i><h3>Master-data matching</h3>
+        <p>Matches OPD entities and pharmacy invoice items against candidate records you supply. Scored matches are returned, and accepted or corrected outcomes can be recorded.</p>
+        <dl><dt>Input</dt><dd>OPD text/documents or invoice items, plus your candidates</dd><dt>Processing</dt><dd>prepare, map, feedback</dd><dt>Output</dt><dd>Scored matches</dd></dl><code class="ex">/api/v1/hims-matching/…</code></article>
+      <article class="cap rv" id="cap-med"><i class="fa-solid fa-pills ic" aria-hidden="true"></i><h3>Medication safety</h3>
+        <p>Looks up drug interactions and adverse events and supports PRR/ROR-style safety-signal analysis for your pharmacists and prescribers.</p>
+        <dl><dt>Input</dt><dd>Drug, medication list or document</dd><dt>Processing</dt><dd>Interactions, safety signals</dd><dt>Output</dt><dd>Findings and risk assessment</dd></dl><code class="ex">/api/v1/pharmacovigilance/…</code></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" id="how">
+  <div class="wrap">
+    <div class="rv head"><p class="label">How it works</p><h2>One integration path, five steps.</h2></div>
+    <div class="zones" aria-hidden="true"><span>Your environment</span><span class="z-api">Clinova API</span><span>Your environment</span></div>
+    <ol class="flow rv">
+      <li><span class="n">01</span><i class="fa-solid fa-hospital ic" aria-hidden="true"></i><b>Your application</b><span>Your HIMS, EMR, clinical app or authorized client starts the workflow.</span></li>
+      <li class="api"><span class="n">02</span><i class="fa-solid fa-code ic" aria-hidden="true"></i><b>REST API request</b><span>It submits supported input to the appropriate Clinova endpoint.</span></li>
+      <li class="api"><span class="n">03</span><i class="fa-solid fa-gears ic" aria-hidden="true"></i><b>Clinova processing</b><span>The relevant documented clinical AI workflow runs.</span></li>
+      <li class="api"><span class="n">04</span><i class="fa-solid fa-file-code ic" aria-hidden="true"></i><b>Structured response</b><span>Clinova returns that endpoint's output as JSON.</span></li>
+      <li><span class="n">05</span><i class="fa-solid fa-arrow-right-to-bracket ic" aria-hidden="true"></i><b>Your workflow continues</b><span>Your application presents it for review or uses it downstream.</span></li>
+    </ol>
+    <p class="statement rv">Add clinical AI capabilities without replacing your existing healthcare software.</p>
+    <p class="fine">Integration still requires implementation work on your side; scope and effort depend on your systems and chosen workflows.</p>
+  </div>
+</section>
+
+<section class="sec" id="demo">
+  <div class="wrap">
+    <div class="rv head"><p class="label">Demonstration</p><h2>What a request and response might look like.</h2>
+    <p class="sub">A local simulation with fictional data: no network request is made. Envelopes and <code>result</code> shapes mirror engine output; long arrays are abbreviated. This interface illustrates the API and is not part of what you integrate.</p></div>
+    <div class="demo rv">
+      <div class="demo-bar"><span><i class="fa-solid fa-flask" aria-hidden="true"></i> Illustrative API Demonstration</span><span class="badge">Synthetic data · simulated</span></div>
+      <div class="tabs" role="tablist" aria-label="Demonstration stages" id="tabs"></div>
+      <div class="panel" role="tabpanel" id="panel" tabindex="0">
+        <div class="demo-head"><span class="chip" id="dEp"></span></div>
+        <p id="dNote" class="dnote"></p>
+        <div class="io"><div><h3>Request</h3><pre id="dReq"></pre></div><div><h3 id="dResL">Response (illustrative)</h3><pre id="dRes"></pre></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="use-cases">
+  <div class="wrap two">
+    <div class="rv"><p class="label">Use cases</p><h2>Where integrators can apply it.</h2><p class="sub">Supported workflows, not claims of existing deployments or validated outcomes.</p></div>
+    <ul class="rows rv">
+      <li><i class="fa-solid fa-file-lines" aria-hidden="true"></i><div><b>Scanned OPD documentation</b><span>Send a scan to <code>/ocr</code> and show the text to staff for review before it enters the record.</span></div></li>
+      <li><i class="fa-solid fa-notes-medical" aria-hidden="true"></i><div><b>Summaries and SOAP drafts</b><span>Return structured drafts that clinicians check and edit in your interface.</span></div></li>
+      <li><i class="fa-solid fa-stethoscope" aria-hidden="true"></i><div><b>Terminology and code candidates</b><span>Normalize terms and retrieve SNOMED CT and ICD-11 candidates for confirmation.</span></div></li>
+      <li><i class="fa-solid fa-database" aria-hidden="true"></i><div><b>FHIR R4 output</b><span>Produce validated resource wrappers for your own interoperability pipeline.</span></div></li>
+      <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i><div><b>Master-data matching</b><span>Link extracted entities and invoice lines to catalogues your system supplies.</span></div></li>
+      <li><i class="fa-solid fa-pills" aria-hidden="true"></i><div><b>Medication safety review</b><span>Run interaction and adverse-event lookups on a medication list or document.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="integration">
+  <div class="wrap">
+    <div class="rv head"><p class="label">Integration</p><h2>Keep your systems. Add selected capabilities.</h2>
+    <p class="sub">Clinova does not implement patient management, scheduling or billing, and has no required user interface. Your organization decides how responses are presented, reviewed, stored and used.</p></div>
+    <div class="arch rv" aria-label="Architecture">
+      <div>Hospital application / HIMS / EMR</div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><div class="hl">Clinova REST API</div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><div>Clinical AI engine</div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><div>API response</div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i><div>Existing application</div>
+    </div>
+    <p class="fine">DAS Medhub also uses a static demonstration frontend to show how outputs may look. It is an evaluation aid, not part of the product.</p>
+  </div>
+</section>
+
+<section class="sec tint" id="technical">
+  <div class="wrap two">
+    <div class="rv"><p class="label">Technical overview</p><h2>For IT teams and software vendors.</h2>
+      <ul class="ticks">
+        <li>REST API with JSON requests and responses, and one endpoint per workflow.</li>
+        <li>A shared request and response envelope across the clinical workflows.</li>
+        <li>Inputs: plain text, images, PDFs and text files, individually or as multi-document requests.</li>
+        <li>Outputs aligned to FHIR R4, SNOMED CT and ICD-11.</li>
+        <li>API reference documentation provided during technical evaluation.</li>
+      </ul></div>
+    <pre class="code rv" id="sample" aria-label="Example request"></pre>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap two">
+    <div class="rv"><p class="label">Why Clinova</p><h2>Why teams choose to integrate Clinova.</h2>
+    <p class="sub">Practical reasons hospitals and healthcare software vendors add Clinova to their existing applications.</p></div>
+    <ul class="rows rv">
+      <li><i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i><div><b>Keep the systems you have</b><span>Add clinical AI to your existing HIMS, EMR or clinical application. No replacement and no change of platform.</span></div></li>
+      <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i><div><b>Adopt one workflow at a time</b><span>Each capability has its own endpoint. Start with document OCR or summaries and add others as your needs grow.</span></div></li>
+      <li><i class="fa-solid fa-file-code" aria-hidden="true"></i><div><b>Structured, standards-aligned output</b><span>JSON responses, FHIR R4 resources, and SNOMED CT and ICD-11 candidates ready for your own pipelines.</span></div></li>
+      <li><i class="fa-solid fa-user-check" aria-hidden="true"></i><div><b>Designed for clinician review</b><span>Outputs are drafts and candidates. Your application controls how they are presented, reviewed and stored, and reviewed OCR text can be submitted back.</span></div></li>
+      <li><i class="fa-solid fa-file-lines" aria-hidden="true"></i><div><b>Works with the documents you already hold</b><span>Scans, PDFs, images, plain text and multi-document requests.</span></div></li>
+      <li><i class="fa-solid fa-database" aria-hidden="true"></i><div><b>Your master data stays the reference</b><span>Match extracted items against the catalogues and records your organization supplies.</span></div></li>
+      <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><b>Security and deployment scoped to you</b><span>Data handling, access and deployment requirements are worked through with your IT and security teams during technical evaluation.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec dark" id="evaluate">
+  <div class="wrap two">
+    <div class="rv"><p class="label">Next step</p><h2>Evaluate Clinova against your workflows.</h2></div>
+    <ol class="steps rv">
+      <li>Discuss your clinical documentation or integration requirements.</li>
+      <li>Identify the relevant Clinova API workflows.</li>
+      <li>Review the documented inputs and outputs.</li>
+      <li>Determine technical, deployment and security requirements.</li>
+      <li>Agree an appropriate demonstration or pilot.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap narrow">
+    <div class="rv head"><p class="label">FAQ</p><h2>Common questions.</h2></div>
+    <details><summary>What is Clinova?</summary><p>An API-only clinical AI inference service from DAS Medhub, built on the Penthus Clinical AI Engine, that processes clinical documents and text through supported workflows.</p></details>
+    <details><summary>Is Clinova an HIS, HIMS, EMR or EHR?</summary><p>No. It does not implement patient management, scheduling or billing. It is called by the software you already use.</p></details>
+    <details><summary>How does it integrate with existing software?</summary><p>Your application sends HTTP requests to the relevant endpoints and handles the JSON responses. Scope depends on your systems and is assessed during evaluation.</p></details>
+    <details><summary>Which inputs are supported?</summary><p>Direct text, images, PDFs (up to 50 pages), plain text files and multi-document requests.</p></details>
+    <details><summary>Does every capability use the same endpoint?</summary><p>No. Each workflow has its own endpoint, with a shared request envelope for the clinical workflows.</p></details>
+    <details><summary>Does it return structured outputs and support FHIR R4?</summary><p>Yes. Workflows return JSON, and <code>/api/v1/fhir</code> generates and validates FHIR R4 resources.</p></details>
+    <details><summary>How can we evaluate it?</summary><p>Request a technical demonstration below, then follow the evaluation steps.</p></details>
+    <details><summary>What does an evaluation cover?</summary><p>Your clinical documentation and integration requirements, the relevant workflows and their inputs and outputs, and your security, data-handling and deployment requirements, leading to an agreed demonstration or pilot.</p></details>
+  </div>
+</section>
+
+<section class="sec tint" id="contact">
+  <div class="wrap two">
+    <div class="rv"><p class="label">Contact</p><h2>Bring clinical AI into your existing healthcare workflows.</h2>
+      <p class="sub">Explore how Clinova's API capabilities can support your organization's clinical documentation, structured data and interoperability requirements.</p>
+      <p class="fine"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Do not include patient information in this form.</p></div>
+    <form id="form" class="form rv" method="POST" action="https://formspree.io/f/mjygjklr" novalidate>
+      <input type="hidden" name="_subject" value="Clinova API enquiry">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <label for="fn">Name</label><input id="fn" name="name" autocomplete="name" required>
+      <label for="fe">Work email</label><input id="fe" name="email" type="email" autocomplete="email" required>
+      <label for="fo">Organization</label><input id="fo" name="org" autocomplete="organization" required>
+      <label for="fi">Interest</label>
+      <select id="fi" name="interest"><option>API demonstration</option><option>Integration discussion</option><option>Pilot evaluation</option><option>Partnership</option></select>
+      <label for="fm">Message (optional)</label><textarea id="fm" name="msg" rows="3"></textarea>
+      <button class="btn btn-primary" type="submit">Request an API Demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+      <p class="fine" id="fStatus" role="status">Your enquiry is sent to the DAS Medhub team. Please do not include patient information.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="band"><div class="wrap band-in">
+    <div><h2>Ready to explore clinical AI integration?</h2><p>Discuss your organization's clinical documentation workflows, API requirements and potential integration opportunities with DAS Medhub.</p></div>
+    <div class="band-cta"><a class="btn btn-accent" href="#contact">Request an API Demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a class="tl" href="mailto:contact@dasmedhub.com?subject=Clinova%20integration%20discussion">Discuss an Integration</a></div>
+  </div></div>
+  <div class="wrap cols">
+    <div class="c-brand"><img src="https://www.dasmedhub.com/images/dasmedhub-logo.png" alt="DAS Medhub" height="30" class="flogo"><strong>Clinova by DAS Medhub</strong>
+      <p>Clinical AI capabilities delivered through APIs for healthcare applications and integration partners.</p>
+      <p>Built to work alongside the systems you already run, not to replace them.</p></div>
+    <nav aria-labelledby="f1"><h3 id="f1">Platform</h3><ul>
+      <li><a href="#cap-doc">Clinical Document Intelligence</a></li><li><a href="#cap-extract">Clinical Extraction</a></li><li><a href="#cap-coding">Terminology Mapping</a></li><li><a href="#cap-fhir">FHIR Interoperability</a></li><li><a href="#cap-med">Medication Safety</a></li></ul></nav>
+    <nav aria-labelledby="f2"><h3 id="f2">Solutions</h3><ul>
+      <li><a href="#use-cases">Hospitals and Healthcare Networks</a></li><li><a href="#technical">Healthcare Software Vendors</a></li><li><a href="#integration">Digital Health Platforms</a></li><li><a href="#evaluate">Integration and Pilot Evaluation</a></li></ul></nav>
+    <nav aria-labelledby="f3"><h3 id="f3">Company</h3><ul>
+      <li><a href="https://www.dasmedhub.com/" rel="noopener" target="_blank">About DAS Medhub <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr">(opens in new tab)</span></a></li>
+      <li><a href="https://www.dasmedhub.com/" rel="noopener" target="_blank">Official Website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr">(opens in new tab)</span></a></li>
+      <li><a href="mailto:contact@dasmedhub.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@dasmedhub.com</a></li>
+      <li><a href="#contact">Request an API Demo</a></li></ul></nav>
+  </div>
+  <div class="wrap bottom"><span>© <span id="yr">2026</span> DAS Medhub. Clinova by DAS Medhub.</span>
+    <a href="#top" class="totop"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top</a></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
